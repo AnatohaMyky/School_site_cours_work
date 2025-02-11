@@ -1,0 +1,240 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Навігаційна панель */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #007bff;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+}
+
+/* Основний контент */
+.main-content {
+    margin-top: 80px;
+    /* Відступ для навігаційної панелі */
+    padding: 20px;
+}
+
+/* Стилі для секцій */
+section {
+    margin-bottom: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.col-md-4 {
+    text-align: center;
+}
+
+.col-md-4 h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Стилі для новин */
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-values {
+    text-align: center;
+}
+
+.carousel-inner img {
+    max-height: 480px;
+    /* Встановлює максимальну висоту зображення */
+    max-width: 100%;
+    /* Встановлює максимальну ширину зображення */
+    object-fit: contain;
+    /* Забезпечує, щоб зображення зберігало співвідношення сторін */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: url('images/prew-next.svg'); /* Шлях до вашого SVG зображення */
+    background-size: cover;
+    width: 30px; /* Розміри стрілочки */
+    height: 30px;
+}
+
+.carousel-control-prev-icon {
+    transform: scaleX(-1); /* Віддзеркалення для стрілочки "назад" */
+}
+
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after {
+    display: none; /* Прибирає стандартні стрілочки */
+}
+
+
+@media (max-width: 768px) {
+    .carousel-inner img {
+        max-height: 200px;
+        /* Зменшена висота зображення для мобільних пристроїв */
+    }
+    .carousel-control-next-icon {
+        width: 12px; /* Розміри стрілочки */
+        height: 12px;
+    }
+    .carousel-control-prev-icon {
+        transform: scaleX(-1); /* Віддзеркалення для стрілочки "назад" */
+        width: 12px; /* Розміри стрілочки */
+        height: 12px;
+    }
+}
+
+
+.news-item {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 40px);
+}
+
+/* Стилі для футера */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.supconteiner {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Додаємо wrap для перенесення елементів на новий ряд при необхідності */
+}
+
+.supconteiner .col-md-6 {
+    flex: 1;
+    margin: 10px 20px 0px 30px ;
+}
+
+/* Медіа-запити для мобільних пристроїв */
+@media (max-width: 768px) {
+    .supconteiner {
+        flex-direction: column; /* Змінюємо розташування елементів у стовпчик */
+        align-items: center; /* Центруємо елементи */
+    }
+
+    .supconteiner .col-md-6 {
+        flex: unset; /* Скидаємо flex для нормального розташування елементів у стовпчику */
+        margin: 10px 0; /* Додаємо відступи між елементами у стовпчику */
+    }
+}
+
+
+.footer-row {
+    margin-top: 20px;
+}
+
+.footer h5 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li i {
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #007bff;
+}
+
+/* Анімація з'явлення */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Застосування анімації до елементів */
+.fade-in {
+    opacity: 0;
+    /* Початковий стан */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Затримка для кожного елемента */
+.fade-in.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.fade-in.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.fade-in.delay-3 {
+    animation-delay: 0.6s;
+}
+
+.fade-in.delay-4 {
+    animation-delay: 0.8s;
+}
+
+.fade-in.delay-5 {
+    animation-delay: 1s;
+}
